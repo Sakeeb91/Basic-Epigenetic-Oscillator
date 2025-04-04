@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Create necessary directories
+mkdir -p plots
+mkdir -p sample_outputs
+
+# Run the simulation to generate sample plots (optional)
+python src/epigenetic_oscillator.py
+
+# Enable Jupyter extensions
+jupyter nbextension enable --py widgetsnbextension 
