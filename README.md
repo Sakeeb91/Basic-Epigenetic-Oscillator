@@ -1,104 +1,117 @@
-# Basic Epigenetic Oscillator Simulator
+# Basic Epigenetic Oscillator Simulator 🧬
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/USERNAME/Basic-Epigenetic-Oscillator/blob/main/notebooks/epigenetic_oscillator.ipynb)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/USERNAME/Basic-Epigenetic-Oscillator/main?filepath=notebooks%2Fepigenetic_oscillator.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Sakeeb91/Basic-Epigenetic-Oscillator/blob/main/notebooks/epigenetic_oscillator.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Sakeeb91/Basic-Epigenetic-Oscillator/main?filepath=notebooks%2Fepigenetic_oscillator.ipynb)
+[![GitHub](https://img.shields.io/github/license/Sakeeb91/Basic-Epigenetic-Oscillator?color=blue)](https://github.com/Sakeeb91/Basic-Epigenetic-Oscillator/blob/main/LICENSE)
 
-This project implements a simulator for the fundamental single negative feedback loop (mRNA-Protein-Metabolite) described by Goodwin (Equations 14 & 15). The simulator models the core dynamics of epigenetic oscillations and allows for visualization and analysis of the system's behavior.
+<p align="center">
+  <img src="sample_outputs/phase_portrait.png" alt="Phase Portrait" width="400"/>
+</p>
 
-## Run Online
+## 📌 Project Overview
 
-You can run this simulator directly in your browser without installing anything:
+This project implements a computational simulator for biological oscillations, specifically modeling the fundamental single negative feedback loop described by Goodwin's equations. The simulator demonstrates how complex biological rhythms (like circadian rhythms) can emerge from simple molecular interactions.
 
-1. **Google Colab**: Click the "Open In Colab" badge above to run the notebook in Google Colab
-2. **Binder**: Click the "Binder" badge to run in a Binder environment
-3. **GitHub Codespaces**: Click the "Code" button on the GitHub repository and select "Open with Codespaces"
+### Key Visualization Examples
 
-## Background
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><img src="sample_outputs/time_series.png" alt="Time Series" width="400"/></td>
+      <td align="center"><img src="sample_outputs/talandic_energy.png" alt="Talandic Energy" width="400"/></td>
+    </tr>
+    <tr>
+      <td align="center"><b>Time Series Plot</b><br/>Shows oscillating mRNA and protein concentrations</td>
+      <td align="center"><b>Talandic Energy Conservation</b><br/>Demonstrates conservation laws in the system</td>
+    </tr>
+  </table>
+</div>
 
-Goodwin's equations describe a simple biochemical oscillator based on negative feedback. The model consists of two state variables:
-- X (mRNA) - repressed by Y
-- Y (protein) - produced from X
+## 🔬 Scientific Background
 
-The system exhibits sustained oscillations under certain parameter conditions, which is a fundamental property of many biological clock mechanisms.
+The Goodwin oscillator is a canonical model in systems biology that explains how negative feedback can generate sustained oscillations in biological systems:
 
-## Mathematical Model
+- **mRNA (X)** is produced and then translated to produce **Protein (Y)**
+- **Protein (Y)** inhibits the production of **mRNA (X)**, creating a negative feedback loop
+- Under the right parameters, this simple feedback mechanism generates sustained oscillations
 
-### Goodwin Model (Equation 14)
+The mathematical model follows these equations:
+
 ```
-dX/dt = a_i / (A_i + k_i*Y) - b_i
-dY/dt = α_i*X - β_i*Y
+dX/dt = a_i / (A_i + k_i*Y) - b_i    (mRNA production with inhibition)
+dY/dt = α_i*X - β_i*Y               (Protein production and degradation)
 ```
 
-### Talandic Energy G (Equation 15)
-```
-G(X, Y) = (α_i/2)*X^2 - β_i*X + b_i*Y + (a_i/k_i)*log(A_i + k_i*Y)
-```
+Where:
+- X and Y are concentrations of mRNA and protein
+- a_i, A_i, k_i, b_i, α_i, β_i are parameters controlling rates of synthesis, degradation, and inhibition
 
-## Features
+## 💻 Technical Highlights
 
-- Implementation of the Goodwin oscillator model (Equation 14)
-- Numerical integration of the system of ordinary differential equations (ODEs)
-- Calculation and verification of the Talandic Energy G, a conserved quantity in the idealized model
-- Visualization tools for time series, phase portraits, and energy conservation
-- Parameter studies to explore the effects of different parameters on oscillation dynamics
+This project demonstrates several key technical skills:
 
-## Sample Outputs
+- **Scientific Computing**: Numerical solution of ordinary differential equations (ODEs)
+- **Mathematical Modeling**: Implementation of biological feedback loops and oscillatory systems
+- **Data Visualization**: Interactive plotting of complex dynamical systems
+- **Scientific Analysis**: Verification of conservation laws and system properties
+- **Software Engineering**: Clean code architecture with modular functions
 
-The simulator generates several plots to help understand the system dynamics:
+### Technologies Used
 
-### Time Series Plot
-![Time Series Plot](https://github.com/USERNAME/Basic-Epigenetic-Oscillator/raw/main/sample_outputs/time_series.png)
+- **Python**: Core implementation language
+- **NumPy/SciPy**: Scientific computing and ODE solving
+- **Matplotlib**: Data visualization
+- **Jupyter**: Interactive notebooks for exploration
+- **ipywidgets**: Interactive parameter controls
 
-### Phase Portrait
-![Phase Portrait](https://github.com/USERNAME/Basic-Epigenetic-Oscillator/raw/main/sample_outputs/phase_portrait.png)
+## 🚀 Interactive Features
 
-### Talandic Energy Conservation
-![Talandic Energy](https://github.com/USERNAME/Basic-Epigenetic-Oscillator/raw/main/sample_outputs/talandic_energy.png)
+The simulator includes:
 
-## Local Installation
+- **Interactive Parameter Exploration**: Adjust key biological parameters and observe effects in real-time
+- **Multiple Visualization Types**: Time series, phase portraits, and conservation analysis
+- **Parameter Studies**: Systematic exploration of parameter effects on system dynamics
+- **Conservation Verification**: Analysis of Talandic Energy conservation
 
-If you prefer to run the code locally:
+## 🔧 Usage Options
 
-1. Clone the repository:
+### 1. Run Online (No Installation Required)
+
+- **Google Colab**: Click the [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Sakeeb91/Basic-Epigenetic-Oscillator/blob/main/notebooks/epigenetic_oscillator.ipynb) badge
+- **Binder**: Click the [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Sakeeb91/Basic-Epigenetic-Oscillator/main?filepath=notebooks%2Fepigenetic_oscillator.ipynb) badge
+- **GitHub Codespaces**: Click the green "Code" button on the repository and select "Open with Codespaces"
+
+### 2. Run Locally
+
 ```bash
-git clone https://github.com/USERNAME/Basic-Epigenetic-Oscillator.git
+# Clone the repository
+git clone https://github.com/Sakeeb91/Basic-Epigenetic-Oscillator.git
 cd Basic-Epigenetic-Oscillator
-```
 
-2. Install the required dependencies:
-```bash
+# Install dependencies
 pip install -r requirements.txt
-```
 
-3. Run the simulator:
-```bash
+# Run the simulation
 python src/epigenetic_oscillator.py
+
+# Or open the notebook
+jupyter notebook notebooks/epigenetic_oscillator.ipynb
 ```
 
-## Project Structure
+## 📊 Sample Results
 
-```
-Basic-Epigenetic-Oscillator/
-├── src/
-│   └── epigenetic_oscillator.py  # Main simulation code
-├── notebooks/
-│   └── epigenetic_oscillator.ipynb  # Interactive notebook
-├── sample_outputs/
-│   ├── time_series.png
-│   ├── phase_portrait.png
-│   └── talandic_energy.png
-├── requirements.txt
-└── README.md
-```
+The simulator demonstrates several key biological phenomena:
 
-## Customization
+1. **Sustained Oscillations**: The system shows spontaneous, self-sustaining oscillations without external forcing
+2. **Phase Relationships**: Clear time delays between mRNA and protein peaks, mimicking real biological systems
+3. **Parameter Sensitivity**: Changing parameters affects oscillation amplitude, period, and stability
+4. **Conservation Laws**: The Talandic Energy remains constant, verifying the mathematical properties
 
-You can modify the parameters in the notebook or Python script to explore different oscillator behaviors:
+## 📖 Further Reading
 
-- Hill coefficient (k_i) - controls the strength of repression
-- Degradation rates (b_i, β_i) - affect oscillation period and amplitude
-- Production rates (a_i, α_i) - affect the steady-state levels and oscillation amplitude
+- Goodwin, B.C. (1965). Oscillatory behavior in enzymatic control processes. Advances in Enzyme Regulation, 3, 425-438.
+- Gonze, D. (2021). The Goodwin model: Behind the Hill function. PLOS Computational Biology, 17(1), e1008691.
 
-## References
+## 📄 License
 
-Goodwin, B.C. (1965). Oscillatory behavior in enzymatic control processes. Advances in Enzyme Regulation, 3, 425-438. 
+This project is open source and available under the MIT License. 
