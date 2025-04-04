@@ -10,7 +10,7 @@
 
 ## 📌 Project Overview
 
-This project implements a computational simulator for biological oscillations, specifically modeling the fundamental single negative feedback loop described by Goodwin's equations. The simulator demonstrates how complex biological rhythms (like circadian rhythms) can emerge from simple molecular interactions.
+This project implements a computational simulator for biological oscillations, specifically modeling the fundamental single negative feedback loop described by Goodwin's equations. The simulator demonstrates how complex biological rhythms (like circadian rhythms) can emerge from simple molecular interactions. The model is inspired by B.C. Goodwin's pioneering work in his 1963 book "Temporal Organization in Cells."
 
 ### Key Visualization Examples
 
@@ -109,6 +109,7 @@ The simulator demonstrates several key biological phenomena:
 
 ## 📖 Further Reading
 
+- Goodwin, B.C. (1963). Temporal Organization in Cells. Academic Press, London.
 - Goodwin, B.C. (1965). Oscillatory behavior in enzymatic control processes. Advances in Enzyme Regulation, 3, 425-438.
 - Gonze, D. (2021). The Goodwin model: Behind the Hill function. PLOS Computational Biology, 17(1), e1008691.
 
